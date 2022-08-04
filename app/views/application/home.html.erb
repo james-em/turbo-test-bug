@@ -1,0 +1,37 @@
+<h1>Home</h1>
+
+<ul>
+  <li>
+    <%= link_to "Go to page 2 (GET)", page2_path %>
+    <ul>
+      <li>Works as expected</li>
+    </ul>
+  </li>
+  <li>
+    <%= link_to "Go to page 2 (POST)", page2_path, data: { "turbo-method": "POST" } %>
+    <ul>
+      <li>Works as expected</li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" id="js-get">Go to page 2 (GET JS TRIGGER)</a>
+    <ul>
+      <li>Expecting: Load empty test page because of given response</li>
+      <li>Result: Making a subsequent GET call and load that response.</li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" id="js-post">Go to page 2 (POST JS TRIGGER)</a>
+    <ul>
+      <li>Expecting: Load ajax response properly like the link_to</li>
+      <li>Result: Load ajax response with error. Reload all JS?</li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" id="js-post-workaround">Go to page 2 (workaround) (POST JS TRIGGER)</a>
+  </li>
+  <li>
+    <a href="#" id="js-post-empty">Go to EMPTY page without js (POST JS TRIGGER)</a>
+  </li>
+</ul>
+
